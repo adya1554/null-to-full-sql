@@ -47,7 +47,13 @@ Level 1: Medium
 
         
 5. Find employees who earn a higher salary than their manager.
-
+      select e.ename,e.sal from emp e inner join emp m on e.MGR = m.empno where e.sal > m.sal;
+          ENAME                       SAL
+-------------------- ----------
+KARTIK                   5512.5
+scott                      3000
+FORD                       3000
+SCOTT                      3000
 6. Display the employee name, job, department name, and location for all employees.
 
 7. Find the departments that have more than 3 employees.
