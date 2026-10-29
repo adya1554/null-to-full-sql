@@ -82,7 +82,7 @@ Level 2: Medium–Hard
 
 19. Find employees who have the same salary as another employee in the same department.
 
-20. Find the department with the highest total salary expenditure.
+20. Find the department with the highest total salary expenditure. = select max(summ) from(select deptno,sum(sal) over(partition by deptno) summ from emp ) ;
 
 21. Display employees who joined in the same year as their manager.
 
