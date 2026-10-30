@@ -78,7 +78,7 @@ Level 2: Medium–Hard
 
 17. Find employees who earn more than at least one manager but less than the highest-paid manager.
 
-18. Display the top 2 highest-paid employees in each department.
+18. Display the top 2 highest-paid employees in each department. select empno, ename, deptno, sal from(select empno,ename, deptno, sal, dense_rank() over(partition by deptno order by sal desc) salary from emp)where salary <= 2;
 
 19. Find employees who have the same salary as another employee in the same department.
 
