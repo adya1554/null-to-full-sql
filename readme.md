@@ -66,11 +66,11 @@ SCOTT                      3000
 
 11. Find employees who do not receive commission (COMM is NULL or 0).
 Level 2: Medium–Hard
-12. Find the third-highest distinct salary from the EMP table.
+12. Find the third-highest distinct salary from the EMP table. ==>> select distinct sal from(select empno,ename, deptno,sal,  dense_rank() over(order by sal desc ) dns from emp) where dns = 3;
 
-13. Display the employees who earn the highest salary in their respective jobs.
+13. Display the employees who earn the highest salary in their respective jobs. ==> select * from (select emp.*,dense_rank() over(partition by job order by sal desc) rnk from emp) where rnk =1;
 
-14. Find departments where the average employee salary is greater than the overall company average salary.
+14. Find departments where the average employee salary is greater than the overall company average salary. ==> 
 
 15. Display each employee's name, salary, department average salary, and the difference between their salary and department average.
     select ename, sal, dept_avg, sal - dept_avg,deptno from (
