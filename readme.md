@@ -115,7 +115,7 @@ Bonus Challenge: Advanced SQL
 
 35. Display each employee's salary and the difference between their salary and the salary of the next-highest-paid employee in the same department.
 
-36. Find the department with the second-highest average salary.
+36. Find the department with the second-highest average salary. --select deptno,omg from (select deptno, dense_rank() over(order by a desc) omg from (select deptno, avg(sal) a from emp group by deptno)) where omg =2 ;
 
 37. Identify employees who earn more than their department average but less than the company average.
 
