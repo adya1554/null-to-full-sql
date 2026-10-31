@@ -102,28 +102,31 @@ Level 3: Hard
 
 29. Find the employees who earn the same salary as the highest-paid employee in any other department.
 
-30. Find the percentage contribution of each employee's salary to their department's total salary.
+30. Find the percentage contribution of each employee's salary to their department's total salary. =  select ename, deptno,sal,dtotal, (sal/dtotal)*100 perc from (select ename, deptno, sal,sum(sal) over(partition by deptno) dtotal from emp);
 
-31. Identify departments where the highest salary is at least twice the lowest salary.
+31. Identify departments where the highest salary is at least twice the lowest salary. == select deptno from (select deptno, max(sal) over(partition by deptno) high , min(sal) over(partition by deptno) low from emp) where (low*2) < high;
 
-32. Find employees whose salary is among the top 3 distinct salaries in the entire company.
+32. Find employees whose salary is among the top 3 distinct salaries in the entire company. == -- Find employees whose salary is among the top 3 distinct salaries in the entire company.
+SQL> select ename,sal from (select ename, sal, dense_rank() over(order by sal desc) asdf from emp) where asdf <=3;
+
+
 Bonus Challenge: Advanced SQL
-33. Find the median salary of employees in each department.
+34. Find the median salary of employees in each department.
 
-34. Display each employee's salary and the difference between their salary and the salary of the next-highest-paid employee in the same department.
+35. Display each employee's salary and the difference between their salary and the salary of the next-highest-paid employee in the same department.
 
-35. Find the department with the second-highest average salary.
+36. Find the department with the second-highest average salary.
 
-36. Identify employees who earn more than their department average but less than the company average.
+37. Identify employees who earn more than their department average but less than the company average.
 
-37. Find the longest-serving employee in each department, including departments with no employees.
+38. Find the longest-serving employee in each department, including departments with no employees.
 
-38. Display a report showing department name, employee count, total salary, average salary, and salary rank by department.
+39. Display a report showing department name, employee count, total salary, average salary, and salary rank by department.
 
-39. Find employees who have the same job as their manager but earn less than their manager.
+40. Find employees who have the same job as their manager but earn less than their manager.
 
-40. Find the percentage of employees in each department who earn above the company average salary.
+41. Find the percentage of employees in each department who earn above the company average salary.
 
-41. Display all employees who belong to the same department as the employee earning the third-highest distinct salary.
+42. Display all employees who belong to the same department as the employee earning the third-highest distinct salary.
 
-42. Find the highest-paid employee in each department without using GROUP BY.
+43. Find the highest-paid employee in each department without using GROUP BY.
