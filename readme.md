@@ -129,4 +129,4 @@ Bonus Challenge: Advanced SQL
 
 42. Display all employees who belong to the same department as the employee earning the third-highest distinct salary.
 
-43. Find the highest-paid employee in each department without using GROUP BY.
+43. Find the highest-paid employee in each department without using GROUP BY. --select distinct deptno,max(sal) over(partition by deptno) high from emp;
