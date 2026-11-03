@@ -56,7 +56,7 @@ FORD                       3000
 SCOTT                      3000
 6. Display the employee name, job, department name, and location for all employees.
 
-7. Find the departments that have more than 3 employees.
+7. Find the departments that have more than 3  employees. 
 
 8. Display the highest-paid employee in each department.
 
