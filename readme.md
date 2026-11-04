@@ -21,7 +21,7 @@ select * from emp;
 
 
 select * from dept;
-
+ 
     DEPTNO DNAME          LOC
 ---------- -------------- -------------
         10 ACCOUNTING     NEW YORK
