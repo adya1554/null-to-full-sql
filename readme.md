@@ -42,7 +42,7 @@ Level 1: Medium
         select \* from (select ename, sal, avg(sal) over(partition by deptno) deptavrg, deptno from emp) where sal > deptavrg;**
 
 
-3. Display each department name and the total salary paid to its employees, including departments with no employees.
+3. Display each department name and the total salary paid to its employees, including departments with no employees
              select d.dname, nvl(sum(e.sal), 0) total from emp e right join dept d on d.deptno = e.deptno group by                          d.dname,d.deptno;
 
         
