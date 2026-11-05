@@ -76,6 +76,7 @@ Level 2: Medium–Hard
     select ename, sal, dept_avg, sal - dept_avg,deptno from (
   select ename, sal,deptno, avg(sal) over(partition by deptno) dept_avg from emp);
 
+
 17. Find employees who earn more than at least one manager but less than the highest-paid manager.
 
 18. Display the top 2 highest-paid employees in each department. select empno, ename, deptno, sal from(select empno,ename, deptno, sal, dense_rank() over(partition by deptno order by sal desc) salary from emp)where salary <= 2;
@@ -115,7 +116,7 @@ Bonus Challenge: Advanced SQL
 
 35. Display each employee's salary and the difference between their salary and the salary of the next-highest-paid employee in the same department.
 
-36. Find the department with the second-highest average salary. --select deptno,omg from (select deptno, dense_rank() over(order by a desc) omg from (select deptno, avg(sal) a from emp group by deptno)) where omg =2 ;
+36. Find the department with the second-highest average salary. --select deptno,omg from (select deptno, dense_rank() over(order by a desc) omg from (select deptno, avg(sal) a from emp group by deptno)) where omg =2;
 
 37. Identify employees who earn more than their department average but less than the company average.
 
