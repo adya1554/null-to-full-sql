@@ -43,7 +43,7 @@ Level 1: Medium
 
 
 3. Display each department name and the total salary paid to its employees, including departments with no employees
-             select d.dname, nvl(sum(e.sal), 0) total from emp e right join dept d on d.deptno = e.deptno group by                          d.dname,d.deptno;
+             select d.dname, nvl(sum(e.sal), 0) total from emp e right join dept d on d.deptno = e.deptno group by                         d.dname,d.deptno;
 
         
 5. Find employees who earn a higher salary than their manager.
