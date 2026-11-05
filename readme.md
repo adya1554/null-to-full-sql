@@ -33,7 +33,7 @@ select * from dept;
 
 
 Medium–Hard SQL Practice Questions (EMP & DEPT)
-Level 1: Medium
+                                                            Level 1: Medium
 1. Display the second-highest salary from the EMP table without using MAX() twice.
         select ename,hiredate, sal, no from (
                 select emp.*,dense_rank() over(order by sal desc) no from emp) where no = 2;
