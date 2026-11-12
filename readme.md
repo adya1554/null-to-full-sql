@@ -134,5 +134,3 @@ Bonus Challenge: Advanced SQL
 43. Find the highest-paid employee in each department without using GROUP BY. --select distinct deptno,max(sal) over(partition by deptno) high from emp;
 A collection of daily SQL solutions covering basic to advanced concepts, aimed at interview preparation and continuous learning.
 
-
-👋 Hi, I'm Aditya Magadum 🎓 Fresh Graduate | ☁️ Cloud & DevOps Enthusiast 🔧 Skilled in AWS, Linux, CI/CD, Python, and Networking adityamagadum108@gmail,com
